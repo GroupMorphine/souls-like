@@ -1,9 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
 
-public class Matrix : MonoBehaviour
+public class Matrix
 {
+    private double[,] matrix = null;
+
+    public Matrix(double[,] matrix)
+    {
+        this.matrix = matrix;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
