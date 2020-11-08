@@ -14,9 +14,15 @@ public class Matrix
         this.matrix = matrix;
     }
 
+    public double this[int r, int c]
+    {
+        get { return this.matrix[r, c]; }
+        set { this.matrix[r, c] = value; }
+    }
+
     public static Matrix Random(int row, int column)
     {
-        double[,] matrix = new double[row, column];
+        Matrix matrix = new Matrix(new double[row, column]);
 
         for (int i = 0; i < row; i++)
         {
@@ -26,7 +32,7 @@ public class Matrix
             }
         }
 
-        return new Matrix(matrix);
+        return matrix;
     }
 
     public static Matrix operator +(Matrix matrix1, Matrix matrix2) 
@@ -41,7 +47,17 @@ public class Matrix
 
     private static double[,] Add(double[,] matrix1, double[,] matrix2)
     {
-        return null;
+        double[,] mx = new double[matrix1.GetLength(0), matrix1.GetLength(1)];
+
+        for (int i = 0; i < mx.GetLength(0); i++)
+        {
+            for (int j = 0; j < mx.GetLength(1); j++)
+            {
+                mx[i, j] = matrix1[i, j] + matrix2[i, j];
+            }
+        }
+
+        return mx;
     }
 
     private static double[,] Dot(double[,] matrix1, double[,] matrix2)
@@ -57,6 +73,18 @@ public class Matrix
             {
                 matrix[i, j] = function(matrix[i, j]);
             }
+        }
+    }
+
+    public void PrintMatrix()
+    {
+        for (int i = 0; i < Row; i++)
+        {
+            for (int j = 0; j < Column; j++)
+            {
+                UnityEngine.Debug.Log(this[i, j] + " ");
+            }
+            UnityEngine.Debug.Log("\n");
         }
     }
 }
