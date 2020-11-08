@@ -35,7 +35,7 @@ public class Matrix
 
     private static double[,] Add(double[,] matrix1, double[,] matrix2)
     {
-        return null;
+        return null; //mübarek
     }
 
     private static double[,] Dot(double[,] matrix1, double[,] matrix2)
