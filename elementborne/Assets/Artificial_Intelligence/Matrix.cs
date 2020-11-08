@@ -43,7 +43,7 @@ public class Matrix
         return null;
     }
 
-    private double[,] function(double[,] matrix1, double[,] matrix2)
+    private double[,] function(double[,] matrix)
     {
         return null;
     }
