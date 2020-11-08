@@ -14,9 +14,15 @@ public class Matrix
         this.matrix = matrix;
     }
 
+    public double this[int row, int column]
+    {
+        get { return this.matrix[row, column]; }
+        set { this.matrix[row, column] = value; }
+    }
+
     public static Matrix Random(int row, int column)
     {
-        double[,] matrix = new double[row, column];
+        Matrix matrix = new Matrix(new double[row, column]);
 
         for (int i = 0; i < row; i++)
         {
@@ -26,7 +32,7 @@ public class Matrix
             }
         }
 
-        return new Matrix(matrix);
+        return matrix;
     }
 
     public static Matrix operator +(Matrix matrix1, Matrix matrix2) 
@@ -55,7 +61,7 @@ public class Matrix
         {
             for (int j = 0; j < Column; j++)
             {
-                matrix[i, j] = function(matrix[i, j]);
+                this[i, j] = function(this[i, j]);
             }
         }
     }
