@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 
 public class Matrix
@@ -33,9 +34,14 @@ public class Matrix
         return new Matrix(Add(matrix1.matrix, matrix2.matrix));
     }
 
+    public static Matrix operator *(Matrix matrix1, Matrix matrix2)
+    {
+        return new Matrix(Dot(matrix1.matrix, matrix2.matrix));
+    }
+
     private static double[,] Add(double[,] matrix1, double[,] matrix2)
     {
-        return null; //mübarek
+        return null;
     }
 
     private static double[,] Dot(double[,] matrix1, double[,] matrix2)
@@ -43,8 +49,14 @@ public class Matrix
         return null;
     }
 
-    private double[,] function(double[,] matrix)
+    public void function(Func<Double, Double> function)
     {
-        return null;
+        for (int i = 0; i < Row; i++)
+        {
+            for (int j = 0; j < Column; j++)
+            {
+                matrix[i, j] = function(matrix[i, j]);
+            }
+        }
     }
 }
