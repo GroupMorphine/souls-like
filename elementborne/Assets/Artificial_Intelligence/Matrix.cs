@@ -43,11 +43,6 @@ public class Matrix
         return null;
     }
 
-    private static double[,] ElementWise(double[,] matrix1, double[,] matrix2)
-    {
-        return null;
-    }
-
     private double[,] function(double[,] matrix1, double[,] matrix2)
     {
         return null;
