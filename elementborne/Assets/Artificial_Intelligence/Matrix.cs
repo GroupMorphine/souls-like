@@ -47,36 +47,33 @@ public class Matrix
 
     private static double[,] Add(double[,] matrix1, double[,] matrix2)
     {
-        double[,] matrix3 = new double[matrix1.GetLength(0), matrix1.GetLength(1)];
+        double[,] matrix = new double[matrix1.GetLength(0), matrix1.GetLength(1)];
+        
         for (int i = 0; i < matrix1.GetLength(0); i++)
         {
             for (int j = 0; j < matrix1.GetLength(1); j++)
             {
-                matrix3[i, j] = matrix1[i, j] + matrix2[i, j];
+                matrix[i, j] = matrix1[i, j] + matrix2[i, j];
             }
         }
-        return matrix3; 
+        return matrix; 
     }
 
     private static double[,] Dot(double[,] matrix1, double[,] matrix2)
     {
-        double[,] matrix3 = new double[matrix1.GetLength(0), matrix2.GetLength(1)];
+        double[,] matrix = new double[matrix1.GetLength(0), matrix2.GetLength(1)];
+        
         for (int i = 0; i < matrix1.GetLength(0); i++)
         {
-
             for (int j = 0; j < matrix2.GetLength(1); j++)
             {
-
                 for (int k = 0; k < matrix1.GetLength(1); k++)
                 {
-
-                    matrix3[i, j] += matrix1[i, k] * matrix2[k, j];
+                    matrix[i, j] += matrix1[i, k] * matrix2[k, j];
                 }
-
             }
-
         }
-        return matrix3;
+        return matrix;
     }
     
 
