@@ -4,14 +4,19 @@ using System.Collections.Generic;
 public class NeuralNetwork
 {
     public List<Matrix> weights = new List<Matrix>();
+    public List<Matrix> biases = new List<Matrix>();
     private int[] layerSizes;
     public NeuralNetwork(params int[] layerSizes)
     {
         this.layerSizes = layerSizes;
+
         for (int i = 1; i < layerSizes.Length; i++)
         {
-            Matrix matrix = Matrix.Random(layerSizes[i], layerSizes[i - 1]);
-            this.weights.Add(matrix);
+            Matrix weight = Matrix.Random(layerSizes[i], layerSizes[i - 1]);
+            Matrix bias = Matrix.Random(layerSizes[i], 1);
+
+            this.biases.Add(bias);
+            this.weights.Add(weight);
         }
     }
 
@@ -33,13 +38,13 @@ public class NeuralNetwork
         Matrix z = null;
         for (int i = 0; i < weights.Count - 1; i++)
         {
-            z = input * weights[i];
+            z = input * weights[i]+biases[i];
             z.function(ReLu);
 
             input = z;
         }
 
-        z = input * weights[weights.Count - 1];
+        z = input * weights[weights.Count - 1] + biases[biases.Count - 1];
         z.function(Sigmoid);
 
         return z;
@@ -47,27 +52,43 @@ public class NeuralNetwork
 
     public NeuralNetwork Copy() 
     {
-        List<Matrix> copy_layers = new List<Matrix>();
+        List<Matrix> copy_weights = new List<Matrix>();
+        List<Matrix> copy_biases = new List<Matrix>();
 
         for (int i = 0; i < layerSizes.Length; i++)
         {
-            Matrix matrix = Matrix.Random(layerSizes[i], layerSizes[i - 1]);
-            copy_layers.Add(matrix);
+            Matrix weight = Matrix.Random(layerSizes[i], layerSizes[i - 1]);
+            Matrix bias = Matrix.Random(layerSizes[i], 1);
+
+            copy_biases.Add(bias);
+            copy_weights.Add(weight);
         }
 
-        for (int i = 0; i < copy_layers.Count; i++)
+        for (int i = 0; i < copy_weights.Count; i++)
         {
-            for (int j = 0; j < copy_layers[i].Row; j++)
+            for (int j = 0; j < copy_weights[i].Row; j++)
             {
-                for (int k = 0; k < copy_layers[i].Column; k++)
+                for (int k = 0; k < copy_weights[i].Column; k++)
                 {
-                    copy_layers[i][j, k] = weights[i][j, k];
+                    copy_weights[i][j, k] = weights[i][j, k];
+                }
+            }
+        }
+
+        for (int i = 0; i < copy_biases.Count; i++)
+        {
+            for (int j = 0; j < copy_biases[i].Row; j++)
+            {
+                for (int k = 0; k < copy_biases[i].Column; k++)
+                {
+                    copy_biases[i][j, k] = biases[i][j, k];
                 }
             }
         }
 
         NeuralNetwork copy_nn = new NeuralNetwork(layerSizes);
-        copy_nn.weights = copy_layers;
+        copy_nn.weights = copy_weights;
+        copy_nn.biases = copy_biases;
 
         return copy_nn;
     }
