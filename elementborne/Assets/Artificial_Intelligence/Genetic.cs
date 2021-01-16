@@ -52,7 +52,15 @@ public class Genetic
     {
         NeuralNetwork network = net.Copy();
 
-        
+        for (int i = 0; i < network.weights.Count; i++)
+        {
+            network.weights[i] = Matrix.Mutate(net.weights[i], mutation_rate);
+        }
+
+        for (int i = 0; i < network.biases.Count; i++)
+        {
+            network.biases[i] = Matrix.Mutate(net.biases[i], mutation_rate);
+        }
 
         return network;
     }

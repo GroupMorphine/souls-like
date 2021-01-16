@@ -126,6 +126,24 @@ public class Matrix
         return uni;
     }
 
+    public static Matrix Mutate(Matrix matrix, float rate = 0.1f) 
+    {
+        Matrix mutated = new Matrix(new double[matrix.Row, matrix.Column]);
+
+        for (int i = 0; i < mutated.Row; i++)
+        {
+            for (int j = 0; j < mutated.Column; j++)
+            {
+                if (UnityEngine.Random.Range(0, 1f) < rate)
+                {
+                    mutated[i, j] = UnityEngine.Random.Range(0, 1f);
+                }
+            }
+        }
+
+        return mutated;
+    }
+
     public void function(Func<Double, Double> function)
     {
         for (int i = 0; i < Row; i++)
