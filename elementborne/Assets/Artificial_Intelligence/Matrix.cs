@@ -53,18 +53,19 @@ public class Matrix
     private static double[,] ElementWiseAdd(double[,] matrix1, double[,] matrix2)
     {
         int row1 = matrix1.GetLength(0);
-        int col1 = matrix1.GetLength(0);
+        int col1 = matrix1.GetLength(1);
         int row2 = matrix2.GetLength(0);
-        int col2 = matrix2.GetLength(0);
-        double[,] matrix = new double[matrix1.GetLength(0), matrix2.GetLength(1)];
+        int col2 = matrix2.GetLength(1);
+
+        double[,] matrix = new double[row1, col1];
 
         if (col1 % col2 == 0 && row1 == row2)
         {
             for (int i = 0; i < row1; i++)
             {
-                for (int j = i * col2; j < col2 * (i + 1); j++)
+                for (int k = 0; k < col1; k++)
                 {
-                    matrix[i, j] = matrix1[i, j] + matrix2[i % row2, j % col2];
+                    matrix[i, k] = matrix1[i, k] + matrix2[i % row2, k % col2];
                 }
             }
         }
