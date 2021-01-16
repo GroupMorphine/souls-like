@@ -9,7 +9,6 @@ public class BatlikeIdleB : StateMachineBehaviour
     GameObject target;
     override public void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        direction = Vector2.left;
         thisObject = animator.gameObject;
     }
 
@@ -28,6 +27,10 @@ public class BatlikeIdleB : StateMachineBehaviour
         if (target != null)
         {
             direction = target.transform.position - thisObject.transform.position;
+            if (!thisObject.GetComponent<Enemy>().canFly)
+            {
+                direction.y = 0;
+            }
             thisObject.GetComponent<Rigidbody2D>().velocity = direction.normalized * thisObject.GetComponent<Enemy>().speed;
             Collider2D player = Physics2D.OverlapCircle(thisObject.transform.GetChild(1).transform.position, thisObject.GetComponent<Enemy>().attackRange);
             if (player != null && player.CompareTag("Player"))
@@ -37,6 +40,14 @@ public class BatlikeIdleB : StateMachineBehaviour
         }
         else
         {
+            if (thisObject.GetComponent<Enemy>().facingright)
+            {
+                direction = Vector2.right;
+            }
+            else
+            {
+                direction = Vector2.left;
+            }
             Collider2D[] player = Physics2D.OverlapCircleAll(thisObject.transform.position, thisObject.GetComponent<Enemy>().visualRange);
             foreach (Collider2D item in player)
             {
@@ -48,6 +59,11 @@ public class BatlikeIdleB : StateMachineBehaviour
             thisObject.GetComponent<Rigidbody2D>().velocity = direction.normalized * thisObject.GetComponent<Enemy>().speed;
             RaycastHit2D hitInfo = Physics2D.Raycast(thisObject.transform.GetChild(0).transform.position, Vector2.down, thisObject.GetComponent<Enemy>().patrolCheckDistance);
             if (hitInfo.collider == null || (hitInfo.collider != null && !hitInfo.collider.CompareTag("Ground")))
+            {
+                direction *= -1;
+            }
+            hitInfo = Physics2D.Raycast(thisObject.transform.GetChild(0).transform.position, direction.normalized,0.1f);
+            if (hitInfo.collider != null && hitInfo.collider.CompareTag("Ground"))
             {
                 direction *= -1;
             }

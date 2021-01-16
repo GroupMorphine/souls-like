@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour
     public float visualRange;
     public float attackRange;
     public float damage;
+    public bool canFly;
     void Start()
     {
         currentHealth = maxHealth;
@@ -66,7 +67,7 @@ public class Enemy : MonoBehaviour
 
     private void OnDrawGizmos()
     {
-        Gizmos.DrawWireSphere(transform.position, attackRange);
+        Gizmos.DrawWireSphere(transform.GetChild(1).position, attackRange);
     }
 
 }

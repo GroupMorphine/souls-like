@@ -1,0 +1,1448 @@
+fileFormatVersion: 2
+guid: 080d5470c41aef34ea2b1238a4d7bad2
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4927441078899401882
+    second: axelike-280x128-11frames_0
+  - first:
+      213: -5513577757162807688
+    second: axelike-280x128-11frames_1
+  - first:
+      213: -1409689574682016106
+    second: axelike-280x128-11frames_2
+  - first:
+      213: -3523127681016495773
+    second: axelike-280x128-11frames_3
+  - first:
+      213: 1991255402396332557
+    second: axelike-280x128-11frames_4
+  - first:
+      213: 1956537397865017177
+    second: axelike-280x128-11frames_5
+  - first:
+      213: 1304516948923903721
+    second: axelike-280x128-11frames_6
+  - first:
+      213: -168252128586331972
+    second: axelike-280x128-11frames_7
+  - first:
+      213: 8510533367959538382
+    second: axelike-280x128-11frames_8
+  - first:
+      213: 1386176028364840422
+    second: axelike-280x128-11frames_9
+  - first:
+      213: 697598958519415771
+    second: axelike-280x128-11frames_10
+  - first:
+      213: 1309631108517389992
+    second: axelike-280x128-11frames_11
+  - first:
+      213: -6393882614037704051
+    second: axelike-280x128-11frames_12
+  - first:
+      213: -2237585992616380512
+    second: axelike-280x128-11frames_13
+  - first:
+      213: 4375749090968927379
+    second: axelike-280x128-11frames_14
+  - first:
+      213: 3822703132846711671
+    second: axelike-280x128-11frames_15
+  - first:
+      213: 7036124883367764484
+    second: axelike-280x128-11frames_16
+  - first:
+      213: 2317287203798820121
+    second: axelike-280x128-11frames_17
+  - first:
+      213: -5117367864792834084
+    second: axelike-280x128-11frames_18
+  - first:
+      213: -6765920788968891520
+    second: axelike-280x128-11frames_19
+  - first:
+      213: -6256265539835991527
+    second: axelike-280x128-11frames_20
+  - first:
+      213: 5658539158688987692
+    second: axelike-280x128-11frames_21
+  - first:
+      213: -2721388829272348751
+    second: axelike-280x128-11frames_22
+  - first:
+      213: 1851570644543211087
+    second: axelike-280x128-11frames_23
+  - first:
+      213: -3542534687893322613
+    second: axelike-280x128-11frames_24
+  - first:
+      213: 7277458448301426111
+    second: axelike-280x128-11frames_25
+  - first:
+      213: 3343910743560132743
+    second: axelike-280x128-11frames_26
+  - first:
+      213: 8695453027807772329
+    second: axelike-280x128-11frames_27
+  - first:
+      213: -2622396749990941025
+    second: axelike-280x128-11frames_28
+  - first:
+      213: 4930805128674810289
+    second: axelike-280x128-11frames_29
+  - first:
+      213: -4586911450171365346
+    second: axelike-280x128-11frames_30
+  - first:
+      213: 7973157090963691869
+    second: axelike-280x128-11frames_31
+  - first:
+      213: 209652085688456593
+    second: axelike-280x128-11frames_32
+  - first:
+      213: 5762421426952234586
+    second: axelike-280x128-11frames_33
+  - first:
+      213: -5350855109566446860
+    second: axelike-280x128-11frames_34
+  - first:
+      213: -3586751192867854524
+    second: axelike-280x128-11frames_35
+  - first:
+      213: -4744602956883517890
+    second: axelike-280x128-11frames_36
+  - first:
+      213: -5835335407285093683
+    second: axelike-280x128-11frames_37
+  - first:
+      213: 5156187413817829417
+    second: axelike-280x128-11frames_38
+  - first:
+      213: 9035965294282754873
+    second: axelike-280x128-11frames_39
+  - first:
+      213: 3943256469534085599
+    second: axelike-280x128-11frames_40
+  - first:
+      213: -9004917167216052069
+    second: axelike-280x128-11frames_41
+  - first:
+      213: -7288970646421894508
+    second: axelike-280x128-11frames_42
+  - first:
+      213: -6340311283013803831
+    second: axelike-280x128-11frames_43
+  - first:
+      213: 9221128699529110391
+    second: axelike-280x128-11frames_44
+  - first:
+      213: 186485116733939228
+    second: axelike-280x128-11frames_45
+  - first:
+      213: 6603919381904835985
+    second: axelike-280x128-11frames_46
+  - first:
+      213: -3841656900506412677
+    second: axelike-280x128-11frames_47
+  - first:
+      213: -9082499406100255261
+    second: axelike-280x128-11frames_48
+  - first:
+      213: 7854288418639085440
+    second: axelike-280x128-11frames_49
+  - first:
+      213: -2951802378270917948
+    second: axelike-280x128-11frames_50
+  - first:
+      213: 8123657838230362334
+    second: axelike-280x128-11frames_51
+  - first:
+      213: 8276850186079795406
+    second: axelike-280x128-11frames_52
+  - first:
+      213: 249848685557924016
+    second: axelike-280x128-11frames_53
+  - first:
+      213: -1027467077144366705
+    second: axelike-280x128-11frames_54
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 16
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Windows Store Apps
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 528
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66b988802763e9bb0800000000000000
+      internalID: -4927441078899401882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_1
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 528
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87ed0d6fd36db73b0800000000000000
+      internalID: -5513577757162807688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_2
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 528
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 696c189fcc6cf6ce0800000000000000
+      internalID: -1409689574682016106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_3
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 528
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3618aaa5a065b1fc0800000000000000
+      internalID: -3523127681016495773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_4
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 528
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d0239e40d3c52ab10800000000000000
+      internalID: 1991255402396332557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_5
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 528
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95fe28da564072b10800000000000000
+      internalID: 1956537397865017177
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_6
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 528
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9eee510e0439a1210800000000000000
+      internalID: 1304516948923903721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_7
+      rect:
+        serializedVersion: 2
+        x: 1414
+        y: 528
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb888ea949f3aadf0800000000000000
+      internalID: -168252128586331972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_8
+      rect:
+        serializedVersion: 2
+        x: 1616
+        y: 528
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eca4656e10d7b1670800000000000000
+      internalID: 8510533367959538382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_9
+      rect:
+        serializedVersion: 2
+        x: 1818
+        y: 528
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ed19d6e0cfac3310800000000000000
+      internalID: 1386176028364840422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_10
+      rect:
+        serializedVersion: 2
+        x: 2020
+        y: 528
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd37b368e8e5ea900800000000000000
+      internalID: 697598958519415771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 396
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a6eaf1fd8ebc2210800000000000000
+      internalID: 1309631108517389992
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_12
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 396
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d829cb683ad5447a0800000000000000
+      internalID: -6393882614037704051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_13
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 396
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a7f5bb156f72f0e0800000000000000
+      internalID: -2237585992616380512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_14
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 396
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 39cf0715d98c9bc30800000000000000
+      internalID: 4375749090968927379
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_15
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 396
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 773e91bee38fc0530800000000000000
+      internalID: 3822703132846711671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_16
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 396
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4022c6c6d4655a160800000000000000
+      internalID: 7036124883367764484
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_17
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 396
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 915acf03f68a82020800000000000000
+      internalID: 2317287203798820121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_18
+      rect:
+        serializedVersion: 2
+        x: 1414
+        y: 396
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdf160a3a057bf8b0800000000000000
+      internalID: -5117367864792834084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_19
+      rect:
+        serializedVersion: 2
+        x: 1616
+        y: 396
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08b141bc3ee9a12a0800000000000000
+      internalID: -6765920788968891520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_20
+      rect:
+        serializedVersion: 2
+        x: 1818
+        y: 396
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91aee8d73a74d29a0800000000000000
+      internalID: -6256265539835991527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_21
+      rect:
+        serializedVersion: 2
+        x: 2020
+        y: 396
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2a7b45726b278e40800000000000000
+      internalID: 5658539158688987692
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_22
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 264
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b7618f374fab3ad0800000000000000
+      internalID: -2721388829272348751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_23
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 264
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f460a80f0b912b910800000000000000
+      internalID: 1851570644543211087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_24
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 264
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b848e93787366dec0800000000000000
+      internalID: -3542534687893322613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_25
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 264
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fb50caea6e9bef460800000000000000
+      internalID: 7277458448301426111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_26
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 264
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 788938eba15f76e20800000000000000
+      internalID: 3343910743560132743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_27
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 264
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9aeb39355747ca870800000000000000
+      internalID: 8695453027807772329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_28
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 264
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9ea6a8cc006b9bd0800000000000000
+      internalID: -2622396749990941025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_29
+      rect:
+        serializedVersion: 2
+        x: 1414
+        y: 264
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b91657d32dbd6440800000000000000
+      internalID: 4930805128674810289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_30
+      rect:
+        serializedVersion: 2
+        x: 1616
+        y: 264
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e182d5ca6540850c0800000000000000
+      internalID: -4586911450171365346
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_31
+      rect:
+        serializedVersion: 2
+        x: 1818
+        y: 264
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d591741712856ae60800000000000000
+      internalID: 7973157090963691869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_32
+      rect:
+        serializedVersion: 2
+        x: 2020
+        y: 264
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19551ed0675d8e200800000000000000
+      internalID: 209652085688456593
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_33
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 132
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a566697d1cb38ff40800000000000000
+      internalID: 5762421426952234586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_34
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 132
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f245bdb0a1fdb5b0800000000000000
+      internalID: -5350855109566446860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_35
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 132
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44727632bcc493ec0800000000000000
+      internalID: -3586751192867854524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_36
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 132
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3e90baafb8c72eb0800000000000000
+      internalID: -4744602956883517890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_37
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 132
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dca338f2d59b40fa0800000000000000
+      internalID: -5835335407285093683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_38
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 132
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 928a3fb52257e8740800000000000000
+      internalID: 5156187413817829417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_39
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 132
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93b4b708f82366d70800000000000000
+      internalID: 9035965294282754873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_40
+      rect:
+        serializedVersion: 2
+        x: 1414
+        y: 132
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fd117d4edd249b630800000000000000
+      internalID: 3943256469534085599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_41
+      rect:
+        serializedVersion: 2
+        x: 1616
+        y: 132
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b983548eb8b180380800000000000000
+      internalID: -9004917167216052069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_42
+      rect:
+        serializedVersion: 2
+        x: 1818
+        y: 132
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 49a06c1d0df58da90800000000000000
+      internalID: -7288970646421894508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_43
+      rect:
+        serializedVersion: 2
+        x: 2020
+        y: 132
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c0af820b70b208a0800000000000000
+      internalID: -6340311283013803831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_44
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 773a79352b708ff70800000000000000
+      internalID: 9221128699529110391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_45
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 0
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1ed2d2c937869200800000000000000
+      internalID: 186485116733939228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_46
+      rect:
+        serializedVersion: 2
+        x: 404
+        y: 0
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 19541c350b5d5ab50800000000000000
+      internalID: 6603919381904835985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_47
+      rect:
+        serializedVersion: 2
+        x: 606
+        y: 0
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7913682761bfaac0800000000000000
+      internalID: -3841656900506412677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_48
+      rect:
+        serializedVersion: 2
+        x: 808
+        y: 0
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3eda2ba49ea74f180800000000000000
+      internalID: -9082499406100255261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_49
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 0
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08f7274f3b9000d60800000000000000
+      internalID: 7854288418639085440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_50
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 0
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4ca320450671907d0800000000000000
+      internalID: -2951802378270917948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_51
+      rect:
+        serializedVersion: 2
+        x: 1414
+        y: 0
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed8d98c43c70db070800000000000000
+      internalID: 8123657838230362334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_52
+      rect:
+        serializedVersion: 2
+        x: 1616
+        y: 0
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ec8796044674dd270800000000000000
+      internalID: 8276850186079795406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_53
+      rect:
+        serializedVersion: 2
+        x: 1818
+        y: 0
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0b047464e04a77300800000000000000
+      internalID: 249848685557924016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: axelike-280x128-11frames_54
+      rect:
+        serializedVersion: 2
+        x: 2020
+        y: 0
+        width: 202.18182
+        height: 132
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f81b6681324bdb1f0800000000000000
+      internalID: -1027467077144366705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

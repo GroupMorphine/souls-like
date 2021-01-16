@@ -53,7 +53,6 @@ public class Character : MonoBehaviour
     {
         airJump = 0;
         key = -1;
-        magics = new GameObject[4];
         counters = new float[4];
         currentHealth = maxHealth;
         healthBar.maxValue = currentHealth;
@@ -128,6 +127,14 @@ public class Character : MonoBehaviour
             else if (Input.GetMouseButtonDown(1) && magics[1] != null && counters[1] <= 0)
             {
                 key = 1;
+            }
+            else if (Input.GetKeyDown(KeyCode.Q) && magics[2] != null && counters[2] <= 0)
+            {
+                key = 2;
+            }
+            else if (Input.GetKeyDown(KeyCode.E) && magics[3] != null && counters[3] <= 0)
+            {
+                key = 3;
             }
             if (key != -1)
             {

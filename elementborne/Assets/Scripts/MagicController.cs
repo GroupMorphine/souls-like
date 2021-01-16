@@ -25,8 +25,17 @@ public class MagicController : MonoBehaviour
             other.gameObject.GetComponent<Enemy>().TakeDamage(damage);
             Destroy(gameObject);
         }
+        else if (other.CompareTag("Ground"))
+        {
+            Destroy(gameObject);
+        }
     }
 
+    public void SkillDestroy()
+    {
+        Destroy(gameObject);
+    }
+    
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, range);
