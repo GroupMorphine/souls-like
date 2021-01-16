@@ -35,14 +35,41 @@ public class Matrix
         return matrix;
     }
 
-    public static Matrix operator +(Matrix matrix1, Matrix matrix2) 
+    public static Matrix operator +(Matrix matrix1, Matrix matrix2)
     {
         return new Matrix(Add(matrix1.matrix, matrix2.matrix));
+    }
+
+    public static Matrix operator ^(Matrix matrix1, Matrix matrix2) 
+    {
+        return new Matrix(ElementWiseAdd(matrix1.matrix, matrix2.matrix));
     }
 
     public static Matrix operator *(Matrix matrix1, Matrix matrix2)
     {
         return new Matrix(Dot(matrix1.matrix, matrix2.matrix));
+    }
+
+    private static double[,] ElementWiseAdd(double[,] matrix1, double[,] matrix2)
+    {
+        int row1 = matrix1.GetLength(0);
+        int col1 = matrix1.GetLength(0);
+        int row2 = matrix2.GetLength(0);
+        int col2 = matrix2.GetLength(0);
+        double[,] matrix = new double[matrix1.GetLength(0), matrix2.GetLength(1)];
+
+        if (col1 % col2 == 0 && row1 == row2)
+        {
+            for (int i = 0; i < row1; i++)
+            {
+                for (int j = i * col2; j < col2 * (i + 1); j++)
+                {
+                    matrix[i, j] = matrix1[i, j] + matrix2[i % row2, j % col2];
+                }
+            }
+        }
+
+        return matrix;
     }
 
     private static double[,] Add(double[,] matrix1, double[,] matrix2)

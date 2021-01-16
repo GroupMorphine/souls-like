@@ -38,13 +38,13 @@ public class NeuralNetwork
         Matrix z = null;
         for (int i = 0; i < weights.Count - 1; i++)
         {
-            z = input * weights[i]+biases[i];
+            z = input * weights[i] ^ biases[i];
             z.function(ReLu);
 
             input = z;
         }
 
-        z = input * weights[weights.Count - 1] + biases[biases.Count - 1];
+        z = input * weights[weights.Count - 1] ^ biases[biases.Count - 1];
         z.function(Sigmoid);
 
         return z;

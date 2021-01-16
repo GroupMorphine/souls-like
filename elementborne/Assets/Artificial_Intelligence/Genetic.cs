@@ -13,13 +13,15 @@ public class Genetic
         {
             for (int i = 0; i < neural1.weights.Count; i++)
             {
-                if (neural1.weights[i].Row == neural2.weights[i].Row &&
-                    neural2.weights[i].Column == neural2.weights[i].Column)
+                if ((neural1.weights[i].Row == neural2.weights[i].Row &&
+                    neural2.weights[i].Column == neural2.weights[i].Column) &&
+                   (neural1.biases[i].Row == neural2.biases[i].Row &&
+                    neural2.biases[i].Column == neural2.biases[i].Column))
                 {
                     this.nn1 = neural1;
                     this.nn2 = neural2;
                 }
-                else 
+                else
                 {
                     throw new Exception("The sizes are not same!");
                 }
