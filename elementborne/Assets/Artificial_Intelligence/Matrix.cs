@@ -103,7 +103,30 @@ public class Matrix
         }
         return matrix;
     }
-    
+
+    public Matrix UniformCross(double[,] matrix1, double[,] matrix2) 
+    {
+        double[,] uni = new double[matrix1.GetLength(0), matrix1.GetLength(1)];
+
+        for (int i = 0; i < uni.GetLength(0); i++)
+        {
+            for (int j = 0; j < uni.GetLength(1); j++)
+            {
+                float rnd = UnityEngine.Random.Range(0, 1f);
+                
+                if (rnd <= 0.5)
+                {
+                    uni[i, j] = matrix1[i, j];
+                }
+                else
+                {
+                    uni[i, j] = matrix2[i, j];
+                }
+            }
+        }
+
+        return new Matrix(uni);
+    }
 
     public void function(Func<Double, Double> function)
     {
