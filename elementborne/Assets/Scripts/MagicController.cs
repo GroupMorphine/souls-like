@@ -18,6 +18,15 @@ public class MagicController : MonoBehaviour
         return (onAir || isGrounded);
     }
 
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            other.gameObject.GetComponent<Enemy>().TakeDamage(damage);
+            Destroy(gameObject);
+        }
+    }
+
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireSphere(transform.position, range);

@@ -1,9 +1,16 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-public class Character : Damageable
+public class Character : MonoBehaviour
 {
+    public new string name;
+    public float maxHealth;
+    [SerializeField]
+    private float currentHealth;
+    public Slider healthBar;
+
     [SerializeField]
     private AnimationClip replaceableAttackAnim;
     [SerializeField]
@@ -37,14 +44,20 @@ public class Character : Damageable
     [SerializeField]
     protected float groundCheckDistance;
     protected bool isGrounded;
+    int airJump;
     protected AnimatorOverrideController overrideController;
     protected bool attacking;
+
+
     void Start()
     {
+        airJump = 0;
         key = -1;
         magics = new GameObject[4];
         counters = new float[4];
         currentHealth = maxHealth;
+        healthBar.maxValue = currentHealth;
+        healthBar.value = currentHealth;
         anim = gameObject.GetComponent<Animator>();
         rb = gameObject.GetComponent<Rigidbody2D>();
 
@@ -61,6 +74,10 @@ public class Character : Damageable
 
     void Update()
     {
+        if (isGrounded)
+        {
+            airJump = 1;
+        }
         CdReduce();
         Pick();
         GroundCheck();
@@ -68,7 +85,7 @@ public class Character : Damageable
         Jump();
         Move();
     }
-    
+   
     private void Pick()
     {
         if (Input.GetKeyDown(KeyCode.E))
@@ -94,8 +111,10 @@ public class Character : Damageable
         Vector3 scale = a.transform.localScale;
         scale.x *= -1;
         a.transform.localScale = scale;
-        if(a.CompareTag("Player"))
+        if (a.CompareTag("Player"))
+        {
             facingright = !facingright;
+        }
     }
 
     protected virtual void Attack()
@@ -165,8 +184,15 @@ public class Character : Damageable
 
     protected virtual void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.Space)&&isGrounded)
+        if (Input.GetKeyDown(KeyCode.Space) && airJump > 0)
         {
+            rb.velocity = Vector2.zero;
+            rb.AddForce(Vector2.up * jumpForce);
+            airJump--;
+        }
+        else if (Input.GetKeyDown(KeyCode.Space) && airJump <= 0 && isGrounded)
+        {
+            rb.velocity = Vector2.zero;
             rb.AddForce(Vector2.up * jumpForce);
         }
     }
@@ -185,16 +211,23 @@ public class Character : Damageable
         anim.SetBool("isgrounded", isGrounded);
     }
 
-    public override void TakeDamage(float damage)
+    public void TakeDamage(float damage)
     {
-        base.TakeDamage(damage);
-
-        anim.SetTrigger("hurt");
+        currentHealth -= damage;
+        healthBar.value = currentHealth;
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+        else if (currentHealth >= maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
     }
 
-    protected override void Die()
+    protected void Die()
     {
-        Debug.Log("şinee");
+        Destroy(gameObject);
     }
 
     [System.Serializable]

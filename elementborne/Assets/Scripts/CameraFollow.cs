@@ -7,15 +7,15 @@ public class CameraFollow : MonoBehaviour
     Transform target;
     [SerializeField]
     private float smoothness;
-    // Start is called before the first frame update
+    Vector3 offset;
     void Awake()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        offset = transform.position - target.position;
     }
 
-    // Update is called once per frame
     void LateUpdate()
     {
-        transform.position = Vector3.Lerp(transform.position, new Vector3(target.position.x, target.position.y, target.position.z - 10), smoothness * Time.deltaTime);
+        transform.position = Vector3.Lerp(transform.position, target.position + offset, smoothness * Time.deltaTime);
     }
 }
