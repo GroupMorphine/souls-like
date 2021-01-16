@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 
 public class Matrix
 {
@@ -104,13 +102,13 @@ public class Matrix
         return matrix;
     }
 
-    public Matrix UniformCross(double[,] matrix1, double[,] matrix2) 
+    public static Matrix UniformCross(Matrix matrix1, Matrix matrix2) 
     {
-        double[,] uni = new double[matrix1.GetLength(0), matrix1.GetLength(1)];
+        Matrix uni = new Matrix(new double[matrix1.Row, matrix1.Column]);
 
-        for (int i = 0; i < uni.GetLength(0); i++)
+        for (int i = 0; i < uni.Row; i++)
         {
-            for (int j = 0; j < uni.GetLength(1); j++)
+            for (int j = 0; j < uni.Column; j++)
             {
                 float rnd = UnityEngine.Random.Range(0, 1f);
                 
@@ -125,7 +123,7 @@ public class Matrix
             }
         }
 
-        return new Matrix(uni);
+        return uni;
     }
 
     public void function(Func<Double, Double> function)

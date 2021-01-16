@@ -1,6 +1,4 @@
 ﻿using System;
-using System.Collections;
-using System.Collections.Generic;
 
 public class Genetic
 {
@@ -36,19 +34,25 @@ public class Genetic
     public NeuralNetwork CrossOver()
     {
         NeuralNetwork network = nn1.Copy();
+        
         for (int i = 0; i < network.weights.Count; i++)
         {
-            for (int j = 0; j < network.weights[i].Row; j++)
-            {
-                for (int k = 0; k < network.weights[i].Column; k++)
-                {
-                    if (true)
-                    {
-
-                    }
-                }
-            }
+            network.weights[i] = Matrix.UniformCross(nn1.weights[i], nn2.weights[i]);
         }
+
+        for (int i = 0; i < network.biases.Count; i++)
+        {
+            network.biases[i] = Matrix.UniformCross(nn1.biases[i], nn2.biases[i]);
+        }
+
+        return network;
+    }
+
+    public static NeuralNetwork Mutate(NeuralNetwork net, float mutation_rate = 0.1f) 
+    {
+        NeuralNetwork network = net.Copy();
+
+        
 
         return network;
     }
