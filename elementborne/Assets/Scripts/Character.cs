@@ -152,7 +152,11 @@ public class Character : MonoBehaviour
                     counters[key] = magics[key].GetComponent<MagicController>().attackRate;
                 }
                 else
+                {
+                    attacking = false;
+                    canMove = true;
                     key = -1;
+                }
             }
         }
     }
