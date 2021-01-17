@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -47,10 +48,12 @@ public class Character : MonoBehaviour
     int airJump;
     protected AnimatorOverrideController overrideController;
     protected bool attacking;
+    protected bool canMove;
 
 
     void Start()
     {
+        canMove = true;
         airJump = 0;
         key = -1;
         counters = new float[4];
@@ -131,10 +134,12 @@ public class Character : MonoBehaviour
             else if (Input.GetKeyDown(KeyCode.Q) && magics[2] != null && counters[2] <= 0)
             {
                 key = 2;
+                canMove = false;
             }
             else if (Input.GetKeyDown(KeyCode.E) && magics[3] != null && counters[3] <= 0)
             {
                 key = 3;
+                canMove = false;
             }
             if (key != -1)
             {
@@ -170,23 +175,34 @@ public class Character : MonoBehaviour
         Vector2 direction = (transform.GetChild(1).position - transform.position);
         direction.Normalize();
         direction.y = 0;
-        a.GetComponent<Rigidbody2D>().AddForce(direction * a.GetComponent<MagicController>().speed,ForceMode2D.Impulse);
-        attacking = false;
-        key = -1;
+        a.GetComponent<Rigidbody2D>().AddForce(direction * a.GetComponent<MagicController>().speed, ForceMode2D.Impulse);
+        ThreadPool.QueueUserWorkItem(delegate {
+            if(attacking)
+            {
+                Thread.Sleep(500);
+                attacking = false;
+                canMove = true;
+                key = -1;
+            }
+        });
     }
+
     protected virtual void Move()
     {
-        float a = Input.GetAxis("Horizontal");
-        if (facingright && a < 0)
+        if(canMove)
         {
-            Flip(gameObject);
+            float a = Input.GetAxis("Horizontal");
+            if (facingright && a < 0)
+            {
+                Flip(gameObject);
+            }
+            else if (!facingright && a > 0)
+            {
+                Flip(gameObject);
+            }
+            rb.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, rb.velocity.y);
+            anim.SetFloat("run", Mathf.Abs(a));
         }
-        else if (!facingright && a > 0)
-        {
-            Flip(gameObject);
-        }
-        rb.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, rb.velocity.y);
-        anim.SetFloat("run", Mathf.Abs(a));
     }
 
     protected virtual void Jump()
