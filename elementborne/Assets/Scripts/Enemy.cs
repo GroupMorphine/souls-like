@@ -33,10 +33,13 @@ public class Enemy : MonoBehaviour
 
     public void AttackCheck()
     {
-        Collider2D player = Physics2D.OverlapCircle(transform.GetChild(1).transform.position, attackRange);
-        if (player != null && player.CompareTag("Player"))
+        Collider2D[] player = Physics2D.OverlapCircleAll(transform.GetChild(1).transform.position, attackRange);
+        foreach (Collider2D item in player)
         {
-            player.GetComponent<Character>().TakeDamage(damage);
+            if (item.CompareTag("Player"))
+            {
+                item.GetComponent<Character>().TakeDamage(damage);
+            }
         }
     }
 

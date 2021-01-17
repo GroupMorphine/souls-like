@@ -493,7 +493,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   patrolCheckDistance: 2
   name: Batlike
-  maxHealth: 80
+  maxHealth: 1
   currentHealth: 0
   healthBar: {fileID: 2250452662470326180}
   facingright: 0
