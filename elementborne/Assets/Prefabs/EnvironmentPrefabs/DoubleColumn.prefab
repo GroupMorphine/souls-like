@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 8652170082302578828}
   - component: {fileID: 8652170082302578830}
   - component: {fileID: 8652170082302578829}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Column
   m_TagString: Ground
   m_Icon: {fileID: 0}
@@ -151,7 +151,7 @@ GameObject:
   - component: {fileID: 8652170082672372182}
   - component: {fileID: 8652170082672372176}
   - component: {fileID: 8652170082672372183}
-  m_Layer: 0
+  m_Layer: 11
   m_Name: Column (1)
   m_TagString: Ground
   m_Icon: {fileID: 0}
