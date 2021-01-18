@@ -1,8 +1,15 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
+
+public class Player
+{
+    public NeuralNetwork brain;
+    public float fitness = 0;
+}
 
 public class Character : MonoBehaviour
 {
@@ -50,9 +57,11 @@ public class Character : MonoBehaviour
     protected bool attacking;
     protected bool canMove;
 
+    public int epoch = 1;
+    public int gen = 0;
     protected NeuralNetwork brain;
-
-
+    protected Genetic neuroevolution;
+    List<Player> players = new List<Player>();
     public GameObject[] dusmanlar;
     Vector3 playerTransform;
     public GameObject[] pos;
@@ -117,7 +126,6 @@ public class Character : MonoBehaviour
         if (timeLeft < 0)
         {
             Die();
-            timeLeft = 30f;
         }
     }
    
@@ -316,6 +324,8 @@ public class Character : MonoBehaviour
 
     protected void Die()
     {
+        timeLeft = 30f;
+        epoch += 1;
         foreach (GameObject item in GameObject.FindGameObjectsWithTag("Enemy"))
         {
             Destroy(item);
@@ -324,7 +334,25 @@ public class Character : MonoBehaviour
         for (int i = 0; i < pos.Length; i++)
         {
             GameObject a = Instantiate(dusmanlar[Random.Range(0, dusmanlar.Length)],pos[i].transform.position ,Quaternion.identity);
-        } 
+        }
+
+        Player player = new Player() { fitness = 1 / (transform.position.x + 35.5f) };
+        players.Add(player);
+
+        if (epoch % 5 == 0)
+        {
+            players.Sort((x, y) => x.fitness.CompareTo(y.fitness));
+            Player parent1 = players[players.Count - 1];
+            Player parent2 = players[players.Count - 2];
+            players.Clear();
+
+            Genetic neuroevolution = new Genetic(parent1.brain.Copy(), parent2.brain.Copy());
+
+            NeuralNetwork new_brain =  neuroevolution.CrossOver();
+            new_brain = Genetic.Mutate(new_brain.Copy(), mutation_rate: 0.1f).Copy();
+            brain = new_brain.Copy();
+            gen++;
+        }
     }
 
     [System.Serializable]
