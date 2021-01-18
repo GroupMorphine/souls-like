@@ -140,7 +140,7 @@ public class Character : MonoBehaviour
 
         timeLeft -= Time.deltaTime;
 
-        Debug.Log(values[0, 0]+" --- "+ values[0, 1]+" --- "+ values[0, 2]);
+        //Debug.Log(values[0, 0]+" --- "+ values[0, 1]+" --- "+ values[0, 2]);
 
         if (timeLeft < 0)
         {

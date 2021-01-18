@@ -279,7 +279,7 @@ PrefabInstance:
     - target: {fileID: 8634243109409220986, guid: 890fcfc535c168e4a8872032377578b3,
         type: 3}
       propertyPath: dusmanlar.Array.size
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 8634243109409220986, guid: 890fcfc535c168e4a8872032377578b3,
         type: 3}
