@@ -87,9 +87,8 @@ public class Character : MonoBehaviour
         Pick();
         GroundCheck();
 
-        Nearest nr = new Nearest();
-        Transform nrObstacle = nr.NearestObstacle();
-        Transform nrEnemy = nr.NearestEnemy();
+        Transform nrObstacle = GetComponent<Nearest>().NearestObstacle();
+        Transform nrEnemy = GetComponent<Nearest>().NearestEnemy();
 
         double[,] inputs = { { nrObstacle.position.x, nrObstacle.position.y, nrEnemy.position.x, transform.position.x + 35.5f } };
 

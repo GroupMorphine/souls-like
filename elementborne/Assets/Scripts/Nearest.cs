@@ -11,10 +11,11 @@ public class Nearest : MonoBehaviour
     {
         Vector2 distance = Vector2.positiveInfinity;
         Transform nearestEnemy = null;
-        Collider2D[] enemy = Physics2D.OverlapCircleAll(transform.position, radius);
-        foreach (Collider2D item in enemy)
+        RaycastHit2D[] enemy = Physics2D.RaycastAll(transform.position, Vector2.left, float.MaxValue);
+        //Collider2D[] enemy = Physics2D.OverlapCircleAll(transform.position, radius);
+        foreach (RaycastHit2D item in enemy)
         {
-            if (item.CompareTag("Enemy"))
+            if (item.collider.CompareTag("Enemy"))
             {
                 Vector2 temp = item.transform.position - transform.position;
                 if (temp.magnitude < distance.magnitude)
@@ -30,10 +31,11 @@ public class Nearest : MonoBehaviour
     {
         Vector2 distance = Vector2.positiveInfinity;
         Transform nearestObstacle = null;
-        Collider2D[] enemy = Physics2D.OverlapCircleAll(transform.position, radius, Obstacle);
-        foreach (Collider2D item in enemy)
+        RaycastHit2D[] enemy = Physics2D.RaycastAll(transform.position, Vector2.left, float.MaxValue, Obstacle);
+        //Collider2D[] enemy = Physics2D.OverlapCircleAll(transform.position, radius, Obstacle);
+        foreach (RaycastHit2D item in enemy)
         {
-            if (item.CompareTag("Ground"))
+            if (item.collider.CompareTag("Ground"))
             {
                 Vector2 temp = item.transform.position - transform.position;
                 if (temp.magnitude < distance.magnitude)
@@ -49,6 +51,5 @@ public class Nearest : MonoBehaviour
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, radius);
     }
 }
