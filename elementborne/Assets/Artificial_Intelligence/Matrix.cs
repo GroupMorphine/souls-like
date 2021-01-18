@@ -7,6 +7,22 @@ public class Matrix
     public int Row { get { return matrix.GetLength(0); } }
     public int Column { get { return matrix.GetLength(1); } }
 
+    public static Matrix T(Matrix matrix)
+    {
+        double[,] temp = new double[matrix.Column, matrix.Row];
+        Matrix tr = new Matrix(temp);
+
+        for (int i = 0; i < matrix.Row; i++)
+        {
+            for (int j = 0; j < matrix.Column; j++)
+            {
+                tr[j, i] = matrix[i, j];
+            }
+        }
+
+        return tr;
+    }
+
     public Matrix(double[,] matrix)
     {
         this.matrix = matrix;

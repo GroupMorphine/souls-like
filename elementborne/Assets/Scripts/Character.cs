@@ -50,9 +50,12 @@ public class Character : MonoBehaviour
     protected bool attacking;
     protected bool canMove;
 
+    protected NeuralNetwork brain;
 
     void Start()
     {
+        brain = new NeuralNetwork(4, 8, 8, 8, 3);
+
         canMove = true;
         airJump = 0;
         key = -1;
@@ -83,9 +86,18 @@ public class Character : MonoBehaviour
         CdReduce();
         Pick();
         GroundCheck();
-        Attack();
-        Jump();
-        Move();
+
+        Nearest nr = new Nearest();
+        Transform nrObstacle = nr.NearestObstacle();
+        Transform nrEnemy = nr.NearestEnemy();
+
+        double[,] inputs = { { nrObstacle.position.x, nrObstacle.position.y, nrEnemy.position.x, transform.position.x + 35.5f } };
+
+        Matrix values = brain.Predict(inputs);
+
+        Attack(values[0, 0]);
+        Jump(values[0, 1]);
+        Move(values[0, 2]);
     }
    
     private void Pick()
@@ -119,10 +131,15 @@ public class Character : MonoBehaviour
         }
     }
 
-    protected virtual void Attack()
+    protected virtual void Attack(double value)
     {
         if (!attacking)
         {
+            if (value >= 0.5 && magics[1] != null && counters[1] <= 0)
+            {
+                key = 1;
+            }
+            /*
             if (Input.GetMouseButtonDown(0) && magics[0] != null && counters[0] <= 0)
             {
                 key = 0;
@@ -140,7 +157,7 @@ public class Character : MonoBehaviour
             {
                 key = 3;
                 canMove = false;
-            }
+            }*/
             if (key != -1)
             {
                 if (magics[key].GetComponent<MagicController>().ActivateOnAir(isGrounded))
@@ -191,11 +208,18 @@ public class Character : MonoBehaviour
         });
     }
 
-    protected virtual void Move()
+    protected virtual void Move(double value)
     {
         if(canMove)
         {
-            float a = Input.GetAxis("Horizontal");
+
+            float a = 0;
+            if (value >= 0.5)
+            {
+                a = -1;
+            }
+
+            //float a = Input.GetAxis("Horizontal");
             if (facingright && a < 0)
             {
                 Flip(gameObject);
@@ -209,14 +233,22 @@ public class Character : MonoBehaviour
         }
     }
 
-    protected virtual void Jump()
+    protected virtual void Jump(double value)
     {
-        if (Input.GetKeyDown(KeyCode.Space) && airJump > 0)
+        if (value >= 0.5 && airJump > 0)
         {
             rb.velocity = Vector2.zero;
             rb.AddForce(Vector2.up * jumpForce);
             airJump--;
         }
+
+        /*
+        if (Input.GetKeyDown(KeyCode.Space) && airJump > 0)
+        {
+            rb.velocity = Vector2.zero;
+            rb.AddForce(Vector2.up * jumpForce);
+            airJump--;
+        }*/
         else if (Input.GetKeyDown(KeyCode.Space) && airJump <= 0 && isGrounded)
         {
             rb.velocity = Vector2.zero;

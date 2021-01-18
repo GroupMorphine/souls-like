@@ -34,19 +34,16 @@ public class NeuralNetwork
     public Matrix Predict(double[,] inputs)
     {
         Matrix input = new Matrix(inputs);
-        Matrix z = null;
         for (int i = 0; i < weights.Count - 1; i++)
         {
-            z = input * weights[i] ^ biases[i];
-            z.function(ReLu);
-
-            input = z;
+            input = (input * Matrix.T(weights[i]));
+            input.function(ReLu);
         }
 
-        z = input * weights[weights.Count - 1] ^ biases[biases.Count - 1];
-        z.function(Sigmoid);
+        input = (input * Matrix.T(weights[weights.Count - 1]));
+        input.function(Sigmoid);
 
-        return z;
+        return input;
     }
 
     public NeuralNetwork Copy() 
