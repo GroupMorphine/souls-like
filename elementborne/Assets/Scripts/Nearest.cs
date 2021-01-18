@@ -15,8 +15,8 @@ public class Nearest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log("Enemy: " + NearestEnemy());
-        Debug.Log("Obstacle: " + NearestObstacle());
+        //Debug.Log("Enemy: " + NearestEnemy());
+        //Debug.Log("Obstacle: " + NearestObstacle());
     }
 
     public Transform NearestEnemy()

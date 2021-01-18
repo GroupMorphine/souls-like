@@ -91,7 +91,7 @@ public class Character : MonoBehaviour
         Transform nrEnemy = GetComponent<Nearest>().NearestEnemy();
 
         double[,] inputs = { { nrEnemy.position.x, nrObstacle.position.x, transform.position.x + 35.5f } };
-        Debug.Log(nrEnemy.position.x);
+        Debug.Log(nrEnemy.transform.localPosition.x);
         Matrix values = brain.Predict(inputs);
 
         Attack(values[0, 0]);
