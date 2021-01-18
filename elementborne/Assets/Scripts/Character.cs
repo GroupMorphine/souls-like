@@ -52,6 +52,20 @@ public class Character : MonoBehaviour
 
     protected NeuralNetwork brain;
 
+
+    public GameObject[] dusmanlar;
+    Vector3 playerTransform;
+    public GameObject[] pos;
+
+    void Awake()
+    {
+        playerTransform = gameObject.transform.localPosition;
+        for (int i = 0; i < pos.Length; i++)
+        {
+            GameObject a = Instantiate(dusmanlar[Random.Range(0, dusmanlar.Length)], pos[i].transform.position, Quaternion.identity);
+        }
+    }
+
     void Start()
     {
         brain = new NeuralNetwork(3, 8, 8, 3);
@@ -91,7 +105,7 @@ public class Character : MonoBehaviour
         Transform nrEnemy = GetComponent<Nearest>().NearestEnemy();
 
         double[,] inputs = { { nrEnemy.localPosition.x, nrObstacle.localPosition.x, transform.localPosition.x + 35.5f } };
-        Debug.Log(nrEnemy.transform.localPosition.x);
+        //Debug.Log(nrEnemy.transform.localPosition.x);
         Matrix values = brain.Predict(inputs);
 
         Attack(values[0, 0]);
@@ -302,7 +316,15 @@ public class Character : MonoBehaviour
 
     protected void Die()
     {
-        Destroy(gameObject);
+        foreach (GameObject item in GameObject.FindGameObjectsWithTag("Enemy"))
+        {
+            Destroy(item);
+        }
+        transform.localPosition = playerTransform;
+        for (int i = 0; i < pos.Length; i++)
+        {
+            GameObject a = Instantiate(dusmanlar[Random.Range(0, dusmanlar.Length)],pos[i].transform.position ,Quaternion.identity);
+        } 
     }
 
     [System.Serializable]
