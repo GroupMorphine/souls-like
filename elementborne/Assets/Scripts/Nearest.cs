@@ -5,62 +5,63 @@ using UnityEngine;
 public class Nearest : MonoBehaviour
 {
     public float radius;
-    public List<GameObject> Enemies = new List<GameObject>();
-    public List<GameObject> Obstacles = new List<GameObject>();
+    public LayerMask Obstacle;
+    // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        Debug.Log("Enemy: " + NearestEnemy());
+        Debug.Log("Obstacle: " + NearestObstacle());
+    }
 
     public Transform NearestEnemy()
     {
-        foreach (var item in Enemies)
+        Vector2 distance = Vector2.positiveInfinity;
+        Transform nearestEnemy = null;
+        Collider2D[] enemy = Physics2D.OverlapCircleAll(transform.position, radius);
+        foreach (Collider2D item in enemy)
         {
-            if (item == null)
+            if (item.CompareTag("Enemy"))
             {
-                Enemies.Remove(item);
+                Vector2 temp = item.transform.position - transform.position;
+                if (temp.magnitude < distance.magnitude)
+                {
+                    distance = temp;
+                    nearestEnemy = item.transform;
+                }
             }
         }
-
-        float diff = transform.position.x - Enemies[0].transform.position.x;
-        Transform nearest = Enemies[0].transform;
-        for (int i = 1; i < Enemies.Count; i++)
-        {
-            float new_diff = transform.position.x - Enemies[i].transform.position.x;
-
-            if (new_diff < diff && new_diff > 0)
-            {
-                nearest = Enemies[i].transform;
-                diff = new_diff;
-            }
-        }
-
-        return nearest;
+        return nearestEnemy;
     }
     public Transform NearestObstacle()
     {
-        foreach (var item in Obstacles)
+        
+        Vector2 distance = Vector2.positiveInfinity;
+        Transform nearestObstacle = null;
+        Collider2D[] enemy = Physics2D.OverlapCircleAll(transform.position, radius,Obstacle);
+        foreach (Collider2D item in enemy)
         {
-            if (item == null)
+            if (item.CompareTag("Ground"))
             {
-                Obstacles.Remove(item);
+                Vector2 temp = item.transform.position - transform.position;
+                if (temp.magnitude < distance.magnitude)
+                {
+                    distance = temp;
+                    nearestObstacle = item.transform;
+                }
             }
         }
-
-        float diff = transform.position.x - Obstacles[0].transform.position.x;
-        Transform nearest = Obstacles[0].transform;
-        for (int i = 1; i < Obstacles.Count; i++)
-        {
-            float new_diff = transform.position.x - Obstacles[i].transform.position.x;
-
-            if (new_diff < diff && new_diff > 0)
-            {
-                nearest = Obstacles[i].transform;
-                diff = new_diff;
-            }
-        }
-
-        return nearest;
+        return nearestObstacle;
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(transform.position, radius);
     }
 }
