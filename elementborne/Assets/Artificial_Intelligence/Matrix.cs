@@ -42,7 +42,7 @@ public class Matrix
         {
             for (int j = 0; j < column; j++)
             {
-                matrix[i, j] = UnityEngine.Random.Range(0, 1f);
+                matrix[i, j] = UnityEngine.Random.Range(-1f, 1f);
             }
         }
 

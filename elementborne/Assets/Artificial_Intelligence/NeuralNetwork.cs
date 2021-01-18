@@ -37,7 +37,7 @@ public class NeuralNetwork
         for (int i = 0; i < weights.Count - 1; i++)
         {
             input = (input * Matrix.T(weights[i]));
-            input.function(ReLu);
+            input.function(Sigmoid);
         }
 
         input = (input * Matrix.T(weights[weights.Count - 1]));
@@ -51,7 +51,7 @@ public class NeuralNetwork
         List<Matrix> copy_weights = new List<Matrix>();
         List<Matrix> copy_biases = new List<Matrix>();
 
-        for (int i = 0; i < layerSizes.Length; i++)
+        for (int i = 1; i < layerSizes.Length; i++)
         {
             Matrix weight = Matrix.Random(layerSizes[i], layerSizes[i - 1]);
             Matrix bias = Matrix.Random(layerSizes[i], 1);

@@ -57,8 +57,11 @@ public class Character : MonoBehaviour
     protected bool attacking;
     protected bool canMove;
 
-    public int epoch = 1;
-    public int gen = 0;
+    [SerializeField]
+    protected Text genText;
+
+    protected int epoch = 0;
+    protected int gen = 0;
     protected NeuralNetwork brain;
     protected Genetic neuroevolution;
     List<Player> players = new List<Player>();
@@ -99,9 +102,11 @@ public class Character : MonoBehaviour
             magicAnimationsDict.Add(x.magic, x.clip);
         }
     }
-    float timeLeft = 30f;
+    float timeLeft = 40f;
     void Update()
     {
+        genText.text = $"Genome: {(epoch % 5)+1} Gen: {gen+1}";
+
         if (isGrounded)
         {
             airJump = 1;
@@ -113,7 +118,7 @@ public class Character : MonoBehaviour
         Transform nrObstacle = GetComponent<Nearest>().NearestObstacle();
         Transform nrEnemy = GetComponent<Nearest>().NearestEnemy();
 
-        double[,] inputs = { { nrEnemy.localPosition.x, nrObstacle.localPosition.x, transform.localPosition.x + 35.5f } };
+        double[,] inputs = { { nrEnemy.localPosition.x - transform.position.x, nrObstacle.localPosition.x-transform.position.x, transform.localPosition.x + 35.5f } };
         //Debug.Log(nrEnemy.transform.localPosition.x);
         Matrix values = brain.Predict(inputs);
 
@@ -122,6 +127,8 @@ public class Character : MonoBehaviour
         Move(values[0, 2]);
 
         timeLeft -= Time.deltaTime;
+
+        Debug.Log(values[0, 0]+" --- "+ values[0, 1]+" --- "+ values[0, 2]);
 
         if (timeLeft < 0)
         {
@@ -243,7 +250,7 @@ public class Character : MonoBehaviour
         {
 
             float a = 0;
-            if (value >= 0.5)
+            if (value >= 0.25)
             {
                 a = -1;
             }
@@ -324,7 +331,13 @@ public class Character : MonoBehaviour
 
     protected void Die()
     {
-        timeLeft = 30f;
+        Player player = new Player();
+        player.fitness = transform.localPosition.x;
+        player.brain = this.brain.Copy();
+
+        players.Add(player);
+
+        timeLeft = 40f;
         epoch += 1;
         foreach (GameObject item in GameObject.FindGameObjectsWithTag("Enemy"))
         {
@@ -336,14 +349,14 @@ public class Character : MonoBehaviour
             GameObject a = Instantiate(dusmanlar[Random.Range(0, dusmanlar.Length)],pos[i].transform.position ,Quaternion.identity);
         }
 
-        Player player = new Player() { fitness = 1 / (transform.position.x + 35.5f) };
-        players.Add(player);
-
+        
+        this.brain = new NeuralNetwork(3, 8, 8, 3);
         if (epoch % 5 == 0)
         {
             players.Sort((x, y) => x.fitness.CompareTo(y.fitness));
-            Player parent1 = players[players.Count - 1];
-            Player parent2 = players[players.Count - 2];
+            Player parent1 = players[0];
+            Player parent2 = players[1];
+            Debug.LogError(parent1.fitness + " --- " + parent2.fitness + " --- " + players[players.Count - 1].fitness);
             players.Clear();
 
             Genetic neuroevolution = new Genetic(parent1.brain.Copy(), parent2.brain.Copy());
@@ -351,7 +364,7 @@ public class Character : MonoBehaviour
             NeuralNetwork new_brain =  neuroevolution.CrossOver();
             new_brain = Genetic.Mutate(new_brain.Copy(), mutation_rate: 0.1f).Copy();
             brain = new_brain.Copy();
-            gen++;
+            gen+=1;
         }
     }
 

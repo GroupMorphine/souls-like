@@ -279,7 +279,7 @@ PrefabInstance:
     - target: {fileID: 8634243109409220986, guid: 890fcfc535c168e4a8872032377578b3,
         type: 3}
       propertyPath: dusmanlar.Array.size
-      value: 3
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8634243109409220986, guid: 890fcfc535c168e4a8872032377578b3,
         type: 3}
@@ -329,6 +329,11 @@ PrefabInstance:
       propertyPath: pos.Array.data[3]
       value: 
       objectReference: {fileID: 880858449}
+    - target: {fileID: 8634243109409220986, guid: 890fcfc535c168e4a8872032377578b3,
+        type: 3}
+      propertyPath: genText
+      value: 
+      objectReference: {fileID: 1752043954}
     - target: {fileID: 8634243110804105070, guid: 890fcfc535c168e4a8872032377578b3,
         type: 3}
       propertyPath: m_AnchorMax.x
@@ -2341,7 +2346,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 45.127197}
+  m_SizeDelta: {x: 309.07, y: 45.127197}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &1752043954
 MonoBehaviour:
