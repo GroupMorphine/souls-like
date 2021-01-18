@@ -54,7 +54,7 @@ public class Character : MonoBehaviour
 
     void Start()
     {
-        brain = new NeuralNetwork(4, 8, 8, 8, 3);
+        brain = new NeuralNetwork(3, 8, 8, 8, 3);
 
         canMove = true;
         airJump = 0;
@@ -90,8 +90,8 @@ public class Character : MonoBehaviour
         Transform nrObstacle = GetComponent<Nearest>().NearestObstacle();
         Transform nrEnemy = GetComponent<Nearest>().NearestEnemy();
 
-        double[,] inputs = { { nrObstacle.position.x, nrObstacle.position.y, nrEnemy.position.x, transform.position.x + 35.5f } };
-
+        double[,] inputs = { { nrEnemy.position.x, nrObstacle.position.x, transform.position.x + 35.5f } };
+        Debug.Log(nrEnemy.position.x);
         Matrix values = brain.Predict(inputs);
 
         Attack(values[0, 0]);
@@ -217,6 +217,10 @@ public class Character : MonoBehaviour
             {
                 a = -1;
             }
+            else
+            {
+                a = 0;
+            }
 
             //float a = Input.GetAxis("Horizontal");
             if (facingright && a < 0)
@@ -240,6 +244,11 @@ public class Character : MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce);
             airJump--;
         }
+        else if (value >= 0.5 && airJump <= 0 && isGrounded)
+        {
+            rb.velocity = Vector2.zero;
+            rb.AddForce(Vector2.up * jumpForce);
+        }
 
         /*
         if (Input.GetKeyDown(KeyCode.Space) && airJump > 0)
@@ -247,12 +256,12 @@ public class Character : MonoBehaviour
             rb.velocity = Vector2.zero;
             rb.AddForce(Vector2.up * jumpForce);
             airJump--;
-        }*/
+        }
         else if (Input.GetKeyDown(KeyCode.Space) && airJump <= 0 && isGrounded)
         {
             rb.velocity = Vector2.zero;
             rb.AddForce(Vector2.up * jumpForce);
-        }
+        }*/
     }
     protected virtual void GroundCheck()
     {
