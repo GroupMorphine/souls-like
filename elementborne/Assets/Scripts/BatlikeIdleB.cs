@@ -65,7 +65,7 @@ public class BatlikeIdleB : StateMachineBehaviour
             {
                 direction *= -1;
             }
-            hitInfo = Physics2D.Raycast(thisObject.transform.GetChild(0).transform.position, direction.normalized,0.3f);
+            hitInfo = Physics2D.Raycast(thisObject.transform.GetChild(0).transform.position, direction.normalized,0.1f);
             if (hitInfo.collider != null && (hitInfo.collider.CompareTag("Ground") || hitInfo.collider.CompareTag("Enemy")))
             {
                 direction *= -1;
