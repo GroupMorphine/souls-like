@@ -80,7 +80,9 @@ public class Character : MonoBehaviour
 
     void Start()
     {
-        brain = new NeuralNetwork(3, 8, 8, 3);
+        brain = new NeuralNetwork(3, 10, 10, 10, 3);
+
+        Time.timeScale = 2;
 
         canMove = true;
         airJump = 0;
@@ -118,8 +120,18 @@ public class Character : MonoBehaviour
         Transform nrObstacle = GetComponent<Nearest>().NearestObstacle();
         Transform nrEnemy = GetComponent<Nearest>().NearestEnemy();
 
-        double[,] inputs = { { nrEnemy.localPosition.x - transform.position.x, nrObstacle.localPosition.x-transform.position.x, transform.localPosition.x + 35.5f } };
-        //Debug.Log(nrEnemy.transform.localPosition.x);
+        double[,] inputs = null;
+
+        try
+        {
+            inputs = new double[,]{ { nrEnemy.localPosition.x - transform.position.x, nrObstacle.localPosition.x - transform.position.x, transform.localPosition.x + 35.5f } };
+        }
+        catch
+        {
+            inputs = new double[,] { { 0, 0, transform.localPosition.x + 35.5f } };
+        }
+        
+
         Matrix values = brain.Predict(inputs);
 
         Attack(values[0, 0]);
@@ -171,7 +183,7 @@ public class Character : MonoBehaviour
     {
         if (!attacking)
         {
-            if (value >= 0.5 && magics[1] != null && counters[1] <= 0)
+            if (value >= 0.65 && magics[1] != null && counters[1] <= 0)
             {
                 key = 1;
             }
@@ -250,7 +262,7 @@ public class Character : MonoBehaviour
         {
 
             float a = 0;
-            if (value >= 0.25)
+            if (value >= 0.5)
             {
                 a = -1;
             }
@@ -275,7 +287,7 @@ public class Character : MonoBehaviour
 
     protected virtual void Jump(double value)
     {
-        if (value >= 0.5 && airJump > 0)
+        if (value >= 0.75 && airJump > 0)
         {
             rb.velocity = Vector2.zero;
             rb.AddForce(Vector2.up * jumpForce);
@@ -349,20 +361,19 @@ public class Character : MonoBehaviour
             GameObject a = Instantiate(dusmanlar[Random.Range(0, dusmanlar.Length)],pos[i].transform.position ,Quaternion.identity);
         }
 
-        
-        this.brain = new NeuralNetwork(3, 8, 8, 3);
+        this.brain = Genetic.Mutate(this.brain.Copy(), mutation_rate: 0.5f);
+
         if (epoch % 5 == 0)
         {
             players.Sort((x, y) => x.fitness.CompareTo(y.fitness));
             Player parent1 = players[0];
             Player parent2 = players[1];
-            Debug.LogError(parent1.fitness + " --- " + parent2.fitness + " --- " + players[players.Count - 1].fitness);
-            players.Clear();
+            //Debug.LogError(parent1.fitness + " --- " + parent2.fitness + " --- " + players[players.Count - 1].fitness);
 
             Genetic neuroevolution = new Genetic(parent1.brain.Copy(), parent2.brain.Copy());
 
             NeuralNetwork new_brain =  neuroevolution.CrossOver();
-            new_brain = Genetic.Mutate(new_brain.Copy(), mutation_rate: 0.1f).Copy();
+            new_brain = Genetic.Mutate(new_brain.Copy(), mutation_rate: 0.2f).Copy();
             brain = new_brain.Copy();
             gen+=1;
         }
