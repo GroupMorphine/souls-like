@@ -54,7 +54,7 @@ public class Character : MonoBehaviour
 
     void Start()
     {
-        brain = new NeuralNetwork(3, 8, 8, 8, 3);
+        brain = new NeuralNetwork(3, 8, 8, 3);
 
         canMove = true;
         airJump = 0;
@@ -76,7 +76,7 @@ public class Character : MonoBehaviour
             magicAnimationsDict.Add(x.magic, x.clip);
         }
     }
-
+    float timeLeft = 30f;
     void Update()
     {
         if (isGrounded)
@@ -90,13 +90,21 @@ public class Character : MonoBehaviour
         Transform nrObstacle = GetComponent<Nearest>().NearestObstacle();
         Transform nrEnemy = GetComponent<Nearest>().NearestEnemy();
 
-        double[,] inputs = { { nrEnemy.position.x, nrObstacle.position.x, transform.position.x + 35.5f } };
+        double[,] inputs = { { nrEnemy.localPosition.x, nrObstacle.localPosition.x, transform.localPosition.x + 35.5f } };
         Debug.Log(nrEnemy.transform.localPosition.x);
         Matrix values = brain.Predict(inputs);
 
         Attack(values[0, 0]);
         Jump(values[0, 1]);
         Move(values[0, 2]);
+
+        timeLeft -= Time.deltaTime;
+
+        if (timeLeft < 0)
+        {
+            Die();
+            timeLeft = 30f;
+        }
     }
    
     private void Pick()
@@ -231,7 +239,7 @@ public class Character : MonoBehaviour
             {
                 Flip(gameObject);
             }
-            rb.velocity = new Vector2(Input.GetAxis("Horizontal") * speed, rb.velocity.y);
+            rb.velocity = new Vector2(a * speed, rb.velocity.y);
             anim.SetFloat("run", Mathf.Abs(a));
         }
     }
